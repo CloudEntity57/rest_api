@@ -13,11 +13,33 @@ li{
 
 .post{
   margin: 15px 0px;
-  background-color: #AB9FBF;
+  background-color: #415E7F;
   text-align: center;
   padding: 25px 0px;
 }
 .post img{
   max-width:50%;
   display: inline-block;
+}
+
+.title{
+  font-size: 2em;
+  color: #FFB051;
+  margin-bottom: 5px;
+}
+.artist{
+  font-size: 1.5em;
+  color: black;
+  margin-bottom:10px;
+}
+
+.edit-box{
+  height:15em;
+  width:15em;
+  border:1px solid grey;
+}
+
+.post input{
+  margin-bottom:10px;
+  float:left;
 }

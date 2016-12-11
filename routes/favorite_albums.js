@@ -7,7 +7,7 @@ router.get('/', function(req, res){
     if(err) console.error("Error: ",err);
     res.json(albums);
   });
-  
+
 });
 
 router.post('/', function(req,res){
@@ -20,7 +20,7 @@ router.post('/', function(req,res){
   var newPost = new AlbumModel(postInfo);
 
   newPost.save(function(err,success){
-    res.send('SUCCESS');
+    res.redirect('/');
   });
 
 
@@ -34,15 +34,17 @@ router.put('/', function(req,res){
       img: req.body.img
     };
     AlbumModel.findByIdAndUpdate(id,updateInfo,function(err,post){
-      if(err) console.error(err);
+      if(err) console.error("error: ",err);
+      console.log('updated!');
       res.send('SUCCESS');
     });
 });
 
 router.delete('/', function(req,res){
   var id = req.body.id;
+  console.log(id);
   AlbumModel.findByIdAndRemove(id,function(err,post){
-    if(err) console.error(err);
+    if(err) console.error("error: ",err);
     res.send('SUCCESS');
   });
 });
